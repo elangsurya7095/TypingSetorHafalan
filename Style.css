@@ -1,0 +1,138 @@
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .game-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 80%;
+        max-width: 800px;
+        text-align: center;
+    }
+    
+    h1 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+    
+    .difficulty-selector {
+        margin-bottom: 20px;
+    }
+    
+    button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    
+    button:hover {
+        background-color: #2980b9;
+    }
+    
+    button.active {
+        background-color: #2ecc71;
+    }
+    
+    .game-controls {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .game-controls button {
+        background-color: #e74c3c;
+    }
+    
+    .game-controls button:hover {
+        background-color: #c0392b;
+    }
+    
+    .game-controls button#reset-btn {
+        background-color: #f39c12;
+    }
+    
+    .game-controls button#reset-btn:hover {
+        background-color: #d35400;
+    }
+    
+    .game-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+    
+    .sentence-display {
+        font-size: 24px;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        border-left: 5px solid #3498db;
+    }
+    
+    .input-container {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    
+    #sentence-input {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        outline: none;
+    }
+    
+    #sentence-input:focus {
+        border-color: #3498db;
+    }
+    
+    .timer-bar {
+        height: 10px;
+        background-color: #eee;
+        border-radius: 5px;
+        margin-top: 5px;
+        overflow: hidden;
+    }
+    
+    .timer-progress {
+        height: 100%;
+        background-color: #2ecc71;
+        width: 100%;
+        transition: width 1s linear;
+    }
+    
+    .result {
+        font-size: 20px;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    
+    .correct {
+        color: #2ecc71;
+    }
+    
+    .incorrect {
+        color: #e74c3c;
+    }
