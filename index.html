@@ -327,6 +327,7 @@
             score = 0;
             gameTime = 60;
             currentSentence = '';
+            currentSentenceIndex = 0;
             
             // Reset UI
             updateScore();
@@ -351,29 +352,32 @@
             if (sentenceInterval) {
                 clearInterval(sentenceInterval);
             }
-            
-            // Choose a sentence based on difficulty
+    
+            // Get the next sentence in order
             if (difficulty === 'hard') {
+                // Untuk hard tetap random seperti sebelumnya
                 currentSentence = hardSentences[Math.floor(Math.random() * hardSentences.length)];
             } else {
-                currentSentence = sentences[Math.floor(Math.random() * sentences.length)];
+                // Untuk easy/normal pakai urutan
+                currentSentence = sentences[currentSentenceIndex];
+                currentSentenceIndex = (currentSentenceIndex + 1) % sentences.length; // Loop ke awal jika sudah sampai akhir
             }
-            
+    
             sentenceDisplay.textContent = currentSentence;
             sentenceInput.value = '';
             resultDisplay.textContent = '';
-            
+    
             // Start sentence timer
             let timeLeft = timePerSentence;
             updateTimerBar(timeLeft);
-            
+    
             sentenceInterval = setInterval(() => {
                 timeLeft--;
                 updateTimerBar(timeLeft);
-                
+        
                 if (timeLeft <= 0) {
                     clearInterval(sentenceInterval);
-                    sentenceDisplay.textContent = "Waktu habis, yahaha noob.";
+                    sentenceDisplay.textContent = "Waktu habis! Kalimat menghilang.";
                     setTimeout(displayNewSentence, 1500);
                 }
             }, 1000);
