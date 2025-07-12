@@ -1,1 +1,1 @@
-<h3>Open game.html to play</h3>
+<h3>Open Game.html to play</h3>
